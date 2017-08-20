@@ -38,7 +38,12 @@ export class WeatherComponent implements OnInit, OnChanges {
     this.myCityWeather[0] = { id: "", main: "", description: "", icon: "50d" };
   }
 
- 
+ ngOnChanges() {
+    console.log("Stating City value ",this.cityName);
+    if (this.cityName != "") {
+      this.showWeather();
+    }
+  }
 
   showWeather() {
     this.http.get(this.host + this.path,
