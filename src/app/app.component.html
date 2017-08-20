@@ -1,0 +1,14 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<app-weather [cityName]="selectedCity"></app-weather>
+<app-citylist (onAdd)="addCityEvent($event)"></app-citylist>
+<!-- <label>{{city}}</label> -->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            <ul class="list-group">
+                <a hef="#" type="button" class="list-group-item" 
+                *ngFor="let c of cityList; let i=index" (click)="selected(i)">{{c}}</a>
+            </ul>
+        </div>
+    </div>
+</div>
